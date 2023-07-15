@@ -2,7 +2,7 @@
   "name": "bite_speed",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -16,5 +16,11 @@
   "bugs": {
     "url": "https://github.com/bharathkumar01-k/Identity-Reconciliation/issues"
   },
-  "homepage": "https://github.com/bharathkumar01-k/Identity-Reconciliation#readme"
+  "homepage": "https://github.com/bharathkumar01-k/Identity-Reconciliation#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "luxon": "^3.3.0",
+    "mysql": "^2.18.1",
+    "mysql-async-simple": "^1.0.3"
+  }
 }
