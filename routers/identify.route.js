@@ -5,5 +5,5 @@ module.exports = async (router) => {
         "/identifyRouteCheck",
         identifyController.identifyCheckController
     );
-    router.post("/identify", identifyController.identifyCheckController);
+    router.post("/identify", identifyController.identifyController);
 };
