@@ -10,8 +10,10 @@ const identifyCheckController = async (req, res) => {
 
 const identifyController = async (req, res) => {
     const listSQL =
-        "SELECT * FROM USERS_BITESPEED WHERE phoneNumber IN (SELECT phoneNumber FROM USERS_BITESPEED WHERE email = ? OR phoneNumber = ?) UNION SELECT * FROM USERS_BITESPEED WHERE email IN (SELECT email FROM USERS_BITESPEED WHERE email = ? OR phoneNumber = ?) UNION SELECT * FROM USERS_BITESPEED WHERE linkedId IN (SELECT id FROM USERS_BITESPEED WHERE email = ? OR phoneNumber = ?)";
+        "SELECT * FROM USERS_BITESPEED WHERE phoneNumber IN (SELECT phoneNumber FROM USERS_BITESPEED WHERE email = ? OR phoneNumber = ?) UNION SELECT * FROM USERS_BITESPEED WHERE email IN (SELECT email FROM USERS_BITESPEED WHERE email = ? OR phoneNumber = ?) UNION SELECT * FROM USERS_BITESPEED WHERE linkedId IN (SELECT id FROM USERS_BITESPEED WHERE email = ? OR phoneNumber = ?) UNION SELECT * FROM USERS_BITESPEED WHERE id IN (SELECT linkedId FROM USERS_BITESPEED WHERE email = ? OR phoneNumber = ?)";
     const listValues = [
+        req.body.email,
+        req.body.phoneNumber,
         req.body.email,
         req.body.phoneNumber,
         req.body.email,
